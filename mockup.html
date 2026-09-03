@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Sistema</title>
+</head>
+<body>
+    <table class="table table-hover"">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>John</td>
+                <td>Doe</td>
+                <td>@social</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Menú con botones para cambiar la sección -->
+        <ul class="nav nav-tabs" role="tablist">
+
+            <!-- Botón de frutas -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#frutas-pane" type="button" role="tab" aria-controls="frutas-pane" aria-selected="true">Frutas</button>
+            </li>
+
+            <!-- Botón de verduras -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#verduras-pane" type="button" role="tab" aria-controls="verduras-pane" aria-selected="false">Verduras</button>
+            </li>
+            
+            <!-- Botón de congelados -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#congelados-pane" type="button" role="tab" aria-controls="verduras-pane" aria-selected="false">Congelados</button>
+            </li>
+
+            <!-- Botón de cereales -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cereales-pane" type="button" role="tab" aria-controls="cereales-pane" aria-selected="false">Cereales</button>
+            </li>
+
+            <!-- Botón de granos -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#granos-pane" type="button" role="tab" aria-controls="granos-pane" aria-selected="false">Granos</button>
+            </li>
+
+            <!-- Botón de otros -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#otros-pane" type="button" role="tab" aria-controls="otros-pane" aria-selected="false">Otros</button>
+            </li>
+        </ul>
+
+        <!-- Contenedor de elementos -->
+        <div class="tab-content">
+
+            <!-- Frutas. Primer apartado. Se muestra por defecto. -->
+            <div class="tab-pane show active" id="frutas-pane" role="tabpanel" aria-labelledby="frutas-tab" tabindex="0">
+                <nav class="navbar bg-body-tertiary">
+                    <form class="container-fluid">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+                        </div>
+                    </form>
+                </nav>
+                <h2>Frutas</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="Fotos/Frutas/manzana.jpg" class="img-fluid mb-2" alt="Manzana">
+                            <h5>Manzana</h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="Fotos/Frutas/platano.jpg" class="img-fluid mb-2" alt="Plátano">
+                            <h5>Plátano</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verduras. Segundo apartado. -->
+            <div class="tab-pane" id="verduras-pane" role="tabpanel" aria-labelledby="verduras-tab" tabindex="0">
+                <nav class="navbar bg-body-tertiary">
+                    <form class="container-fluid">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+                        </div>
+                    </form>
+                </nav>
+                <h2>Verduras</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="Brócoli">
+                            <h5>Brócoli</h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="Zanahoria">
+                            <h5>Zanahoria</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Congelados. Tercer apartado. -->
+            <div class="tab-pane" id="congelados-pane" role="tabpanel" aria-labelledby="congelados-tab" tabindex="0">
+                <nav class="navbar bg-body-tertiary">
+                    <form class="container-fluid">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+                        </div>
+                    </form>
+                </nav>
+                <h2>Congelados</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="Helado">
+                            <h5>Helado</h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="Carne">
+                            <h5>Carne congelada</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cereales. Cuarto apartado. -->
+            <div class="tab-pane" id="cereales-pane" role="tabpanel" aria-labelledby="cereales-tab" tabindex="0">
+                <nav class="navbar bg-body-tertiary">
+                    <form class="container-fluid">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+                        </div>
+                    </form>
+                </nav>
+                <h2>Cereales</h2>
+                <div class="row">
+                    <div class="col-2 prueba">
+                        <div class="p-3">
+                            <img src="Fotos/Cereales/arroz.jpg" class="img-fluid mb-2" alt="Arroz">
+                            <h5>Arroz</h5>
+                        </div>
+                    </div>
+                    <div class="col-2 prueba">
+                        <div class="p-3">
+                            <img src="Fotos/Cereales/cebada.jpg" class="img-fluid mb-2" alt="Cebeda">
+                            <h5>Cebada</h5>
+                        </div>
+                    </div>
+                    <div class="col-2 prueba">
+                        <div class="p-3">
+                            <img src="Fotos/Cereales/trigo.jpg" class="img-fluid mb-2" alt="Trigo">
+                            <h5>Trigo</h5>
+                        </div>
+                    </div>
+                    <div class="col-2 prueba">
+                        <div class="p-3">
+                            <img src="Fotos/Cereales/avena.jpg" class="img-fluid mb-2" alt="Avena">
+                            <h5>Avena</h5>
+                        </div>
+                    </div>
+                    <div class="col-2 prueba">
+                        <div class="p-3">
+                            <img src="Fotos/Cereales/centeno.jpg" class="img-fluid mb-2" alt="Centeno">
+                            <h5>Centeno</h5>
+                        </div>
+                    </div>
+                    <div class="col-2 prueba">
+                        <div class="p-3">
+                            <img src="Fotos/Cereales/quinoa.jpg" class="img-fluid mb-2" alt="Quinoa">
+                            <h5>Quinoa</h5>
+                        </div>
+                    </div>
+                    <div class="col-2 prueba">
+                        <div class="p-3">
+                            <img src="Fotos/Cereales/amaranto.jpg" class="img-fluid mb-2" alt="Amaranto">
+                            <h5>Amaranto</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Granos. Quinto apartado. -->
+            <div class="tab-pane" id="granos-pane" role="tabpanel" aria-labelledby="granos-tab" tabindex="0">
+                <nav class="navbar bg-body-tertiary">
+                    <form class="container-fluid">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+                        </div>
+                    </form>
+                </nav>
+                <h2>Granos</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="Maíz">
+                            <h5>Maíz</h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="Frijol">
+                            <h5>Frijol</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Otros. Sexto apartado. -->
+            <div class="tab-pane" id="otros-pane" role="tabpanel" aria-labelledby="otros-tab" tabindex="0">
+                <nav class="navbar bg-body-tertiary">
+                    <form class="container-fluid">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+                        </div>
+                    </form>
+                </nav>
+                <h2>Otros</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="Jabón">
+                            <h5>Jabón</h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3">
+                            <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="Galletas">
+                            <h5>Galletas</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
