@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STOCKLY | Ventas</title>
+<link rel="stylesheet" href="css/estilos.css">
+<script defer src="js/productos.js">
+</script>
+<script defer src="js/ventas.js">
+</script>
+</head>
+<body>
+<section id="inicio">
+<div class="bienvenida">
+<p class="marca">STOCKLY</p>
+<h1>Frutería Victoria</h1>
+<p>Punto de venta</p>
+<button id="entrar" class="principal">Entrar al sistema</button>
+<small>Prototipo de ventas · Sin base de datos</small>
+</div>
+</section>
+<main id="sistema" hidden>
+<header>
+<div>
+<strong>STOCKLY</strong>
+<small>FRUTERÍA VICTORIA</small>
+</div>
+<span>Ventas</span>
+<button id="salir">Salir</button>
+</header>
+<nav id="cuentas" aria-label="Cuentas abiertas">
+</nav>
+<section class="ticket">
+<table>
+<thead>
+<tr>
+<th>Producto</th>
+<th>Peso / cantidad</th>
+<th>Precio unitario</th>
+<th>Importe</th>
+<th>Acciones</th>
+</tr>
+</thead>
+<tbody id="filas">
+</tbody>
+</table>
+<p id="vacio">Ticket vacío. Selecciona un producto para comenzar.</p>
+</section>
+<div class="totales">
+<button id="vaciar">Vaciar cuenta</button>
+<div>
+<small>Total</small>
+<strong id="total">$0.00</strong>
+</div>
+<button id="pagar" class="principal" disabled>Pagar</button>
+</div>
+<div id="separador" role="separator" tabindex="0" aria-label="Ajustar altura del ticket y catálogo" aria-orientation="horizontal" aria-valuemin="20" aria-valuemax="75" aria-valuenow="45" title="Arrastra arriba o abajo. También puedes usar las flechas del teclado.">
+<span>
+</span>
+</div>
+<section class="catalogo">
+  <div class="barra-catalogo">
+    <div>
+<strong id="titulo-categoria">Frutas</strong>
+<small id="cantidad-productos">
+</small>
+</div>
+    <label class="busqueda">Buscar<input id="buscar" type="search" placeholder="Nombre del producto" autocomplete="off">
+</label>
+    <button id="nuevo-producto">Agregar producto</button>
+  </div>
+  <div id="productos" aria-label="Productos">
+</div>
+  <nav id="categorias" aria-label="Categorías">
+</nav>
+</section>
+<footer>Demostración: los datos se pierden al recargar o cerrar esta página.</footer>
+</main>
+<dialog id="editor" aria-labelledby="nombre-producto">
+<form id="form-producto">
+<h2 id="nombre-producto">
+</h2>
+<p>Modifica los valores para esta línea del ticket.</p>
+<label id="label-precio" for="precio">Precio</label>
+<input id="precio" type="number" min="0.01" max="100000" step="0.01" required>
+<label id="label-cantidad" for="cantidad">Peso (kg)</label>
+<input id="cantidad" type="number" min="0.001" max="10000" step="0.001" required>
+<div class="importe">Importe calculado <strong id="importe">
+</strong>
+</div>
+<div class="acciones">
+<button type="button" data-cerrar="editor">Cancelar</button>
+<button class="principal" id="guardar-producto">Agregar al ticket</button>
+</div>
+</form>
+</dialog>
+<dialog id="cobro" aria-labelledby="titulo-cobro">
+<form id="form-cobro">
+<h2 id="titulo-cobro">Resumen de venta</h2>
+<div id="resumen">
+</div>
+<div class="importe">Total <strong id="total-cobro">
+</strong>
+</div>
+<label for="metodo">Método de pago</label>
+<select id="metodo" required>
+<option value="">Selecciona una opción</option>
+<option>Efectivo</option>
+<option>Tarjeta</option>
+<option>Transferencia</option>
+</select>
+<div id="efectivo" hidden>
+<label for="recibido">Efectivo recibido</label>
+<input id="recibido" type="number" min="0" max="1000000000" step="0.01">
+<p id="cambio" aria-live="polite">
+</p>
+</div>
+<p class="nota">Simulación: no procesa cargos ni verifica transferencias.</p>
+<div class="acciones">
+<button type="button" data-cerrar="cobro">Cancelar</button>
+<button id="confirmar" class="principal" disabled>Confirmar pago</button>
+</div>
+</form>
+</dialog>
+<dialog id="resultado" aria-labelledby="titulo-resultado">
+<h2 id="titulo-resultado">Venta de demostración completada</h2>
+<div id="comprobante">
+</div>
+<div class="acciones">
+<button id="imprimir">Imprimir ticket</button>
+<button class="principal" data-cerrar="resultado">Nueva venta</button>
+</div>
+</dialog>
+<dialog id="alta-producto" aria-labelledby="titulo-alta">
+  <form id="form-alta">
+    <h2 id="titulo-alta">Agregar producto</h2>
+    <label for="alta-nombre">Nombre</label>
+<input id="alta-nombre" maxlength="45" required>
+    <label for="alta-categoria">Categoría</label>
+<select id="alta-categoria" required>
+</select>
+    <label for="alta-unidad">Se vende por</label>
+<select id="alta-unidad">
+<option value="kg">Kilogramo</option>
+<option value="pza">Pieza</option>
+<option value="caja">Caja</option>
+<option value="paq">Paquete</option>
+</select>
+    <label for="alta-precio">Precio unitario (MXN)</label>
+<input id="alta-precio" type="number" min="0.01" max="100000" step="0.01" required>
+    <label for="alta-imagen">Ruta de la imagen (opcional)</label>
+<input id="alta-imagen" placeholder="imagenes/manzana.png" maxlength="180">
+    <p class="nota">El producto se agrega solo durante esta sesión. Para incluirlo permanentemente en el proyecto, añádelo en js/productos.js.</p>
+    <p id="error-alta" role="alert">
+</p>
+    <div class="acciones">
+<button type="button" data-cerrar="alta-producto">Cancelar</button>
+<button class="principal">Guardar producto</button>
+</div>
+  </form>
+</dialog>
+<section id="ticket-impreso" aria-hidden="true">
+</section>
+</body>
+</html>
